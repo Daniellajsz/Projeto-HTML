@@ -1,0 +1,30 @@
+/* botão clique aqui */
+
+.sem-conta {
+  background: #bbb5b5;      
+  padding: 10px 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-align: center;
+  border: 1px solid #bbb5b5;    
+  margin-top: 23px;
+}
+
+.sem-conta p {
+  margin: 0;
+  font-size: 15px;
+  color: #333;
+  font-weight: 500;
+}
+
+.sem-conta a {
+  color: #0077ff;           
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.sem-conta a:hover {
+  text-decoration: underline;
+  color: #0051b8;            
+}

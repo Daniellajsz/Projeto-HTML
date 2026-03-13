@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Landing — Barbearia Ultra Luxo</title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&family=Playfair+Display:wght@700;900&display=swap"
+    rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-left: #2f2f30;
+      --bg-right: #151515;
+      --accent: #e49a2e;
+      --text-main: #f5f5f5;
+      --muted: #cfcfcf;
+    }
+
+    /* Reset básico */
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: #111;
+      color: var(--text-main);
+    }
+
+    /* Área principal */
+    .hero {
+      position: relative;
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    /* Colunas esquerda/direita */
+    .col {
+      height: 100vh;
+      width: 50%;
+      position: relative;
+    }
+
+    .left {
+      background: var(--bg-left);
+      padding: 64px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .right {
+      background: linear-gradient(90deg, var(--bg-right), #0b0b0b);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: visible;
+    }
+
+    /* título grande */
+    .title {
+      font-size: 70px;
+      line-height: 0.95;
+      color: var(--accent);
+      font-weight: 700;
+      margin: 0 0 24px 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Parágrafo animado */
+    .lead span {
+      display: block;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 1s forwards;
+      animation-delay: var(--delay, 0s);
+      position: relative;
+      z-index: 1;
+    }
+
+    @keyframes fadeUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Seta dourada neon animada */
+    .arrow {
+      width: 160px;
+      height: 2px;
+      background: linear-gradient(90deg, #ffdf6a, #ffb84a, #ff8c00);
+      position: relative;
+      margin-top: 8px;
+      z-index: 1;
+
+      /* brilho neon na linha */
+      box-shadow:
+        0 0 8px #ffdf6a,
+        0 0 16px #ffb84a,
+        0 0 28px #ff8c00;
+
+      /* animação de pulsar */
+      animation: pulseGlow 2s infinite ease-in-out;
+    }
+
+    .arrow:after {
+      content: "";
+      position: absolute;
+      right: -12px;
+      top: -6px;
+      width: 0;
+      height: 0;
+      border-left: 10px solid #ffdf6a;
+      /* dourado neon */
+      border-top: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+
+      /* brilho neon da ponta */
+      filter: drop-shadow(0 0 8px #ffdf6a);
+    }
+
+    /* Pulsando */
+    @keyframes pulseGlow {
+      0% {
+        box-shadow:
+          0 0 6px #ffdf6a,
+          0 0 12px #ffb84a,
+          0 0 20px #ff8c00;
+      }
+
+      50% {
+        box-shadow:
+          0 0 12px #ffdf6a,
+          0 0 26px #ffb84a,
+          0 0 40px #ff8c00;
+      }
+
+      100% {
+        box-shadow:
+          0 0 6px #ffdf6a,
+          0 0 12px #ffb84a,
+          0 0 20px #ff8c00;
+      }
+    }
+
+    /* círculo com foto */
+    .circle-wrap {
+      position: absolute;
+      width: 560px;
+      height: 560px;
+      left: 40%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: pulseCircle 4s ease-in-out infinite;
+    }
+
+    .circle {
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: url('barbudo.jpg') center/cover no-repeat;
+      box-shadow: 0 60px 120px rgba(0, 0, 0, 0.6), 0 0 60px rgba(228, 154, 46, 0.3);
+    }
+
+    @keyframes pulseCircle {
+
+      0%,
+      100% {
+        transform: translate(-50%, -50%) scale(1);
+      }
+
+      50% {
+        transform: translate(-50%, -50%) scale(1.05);
+      }
+    }
+
+    /* Texto circular girando com brilho */
+    .svg-circle {
+      position: absolute;
+      width: 570px;
+      height: 560px;
+      left: calc(40% - 280px);
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 2;
+      pointer-events: none;
+      animation: rotateCircle 40s linear infinite;
+    }
+
+    @keyframes rotateCircle {
+      0% {
+        transform: translateY(-50%) rotate(0deg);
+      }
+
+      100% {
+        transform: translateY(-50%) rotate(360deg);
+      }
+    }
+
+    .svg-circle text {
+      fill: #fff;
+      font-weight: 600;
+      font-size: 18px;
+      letter-spacing: 2px;
+      font-family: "Montserrat", sans-serif;
+      text-shadow: 0 0 20px rgba(228, 154, 46, 10), 0 0 30px rgba(228, 154, 46, 0.8), 0 0 45px rgba(228, 154, 46, 0.8),
+        0 0 10px rgba(255, 180, 80, 1), 0 0 20px rgba(255, 180, 80, 1), 0 0 40px rgba(255, 180, 80, 0.8), 0 0 60px rgba(255, 180, 80, 0.6),
+        0 0 80px rgba(255, 180, 80, 0.4), 0 0 10px #ffb84a;
+
+    }
+
+    /* imagem do modelo com flutuação */
+    .portrait {
+      position: absolute;
+      right: -6%;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 55%;
+      max-width: 900px;
+      z-index: 3;
+      display: block;
+      object-fit: cover;
+      filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.6));
+      clip-path: ellipse(42% 60% at 35% 50%);
+      animation: floatImg 6s ease-in-out infinite;
+    }
+
+    @keyframes floatImg {
+
+      0%,
+      100% {
+        transform: translateY(-50%) translateX(0);
+      }
+
+      50% {
+        transform: translateY(-52%) translateX(0);
+      }
+    }
+
+    /* Marca d'água animada */
+    .watermark {
+      position: absolute;
+      top: 20px;
+      left: -100px;
+      font-size: 140px;
+      font-weight: 900;
+      color: rgba(228, 154, 46, 0.09);
+      pointer-events: none;
+      white-space: nowrap;
+      animation: floatWatermark 15s ease-in-out infinite alternate;
+      z-index: 0;
+      transform: rotate(-10deg);
+      font-family: 'Playfair Display', serif;
+    }
+
+    @keyframes floatWatermark {
+      0% {
+        transform: translateX(0) rotate(-10deg);
+      }
+
+      50% {
+        transform: translateX(220px) rotate(-5deg);
+      }
+
+      100% {
+        transform: translateX(0) rotate(-10deg);
+      }
+    }
+
+    coloca dourado brilhante
+    /* Responsividade */
+    @media (max-width:1000px) {
+      .title {
+        font-size: 44px;
+      }
+
+      .circle-wrap {
+        width: 420px;
+        height: 420px;
+        left: 50%;
+      }
+
+      .svg-circle {
+        width: 420px;
+        height: 420px;
+        left: calc(50% - 210px);
+      }
+
+      .portrait {
+        width: 60%;
+        right: -10%;
+      }
+
+      .left {
+        padding: 32px;
+      }
+    }
+
+    @media (max-width:720px) {
+      .hero {
+        flex-direction: column;
+      }
+
+      .col {
+        width: 100%;
+        height: auto;
+      }
+
+      .left {
+        order: 2;
+        padding: 28px;
+      }
+
+      .right {
+        order: 1;
+        height: 60vh;
+      }
+
+      .portrait {
+        position: relative;
+        right: auto;
+        transform: none;
+        width: 55%;
+        clip-path: none;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .svg-circle,
+      .circle-wrap,
+      .bg-video {
+        display: none;
+      }
+
+      .title {
+        font-size: 36px;
+      }
+
+      .circulo {
+        width: 250px;
+        height: 250px;
+      }
+
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="hero">
+    <div class="left col">
+      <!-- Vídeo de fundo -->
+      <video class="bg-video" autoplay muted loop playsinline>
+        <source src="video.webm" type="video/webm">
+      </video>
+
+      <!-- Marca d'água flutuante -->
+      <div class="watermark">Barberia Estilo & Tradição</div>
+
+      <h2 class="title">Nossa História</h2>
+
+      <p class="lead">
+        <span style="--delay:0.3s;">A Barbearia Estilo &amp; nasceu com a vontade de oferecer um cuidado masculino de
+          qualidade, com atenção aos detalhes e respeito ao estilo de cada cliente. </span>
+        <span style="--delay:0.6s;"> Começamos pequenos, com dedicação total a cada corte, cada barba e cada conversa.
+          <span>
+            <span style="--delay:0.9s;">Com o tempo, nosso compromisso com técnica, capricho e bom atendimento fez a
+              barbearia crescer.</span>
+            <span style="--delay:1.2s;"> Ampliamos serviços, evoluímos o espaço e formamos uma equipe forte, mantendo o
+              mesmo propósito de sempre: unir estilo, tradição e confiança em cada atendimento.</span>
+      </p>
+
+      <div class="arrow" aria-hidden="true"></div>
+    </div>
+
+    <div class="right col">
+      <!-- círculo central com foto do barbudo -->
+      <div class="circle-wrap" aria-hidden="true">
+        <div class="circle"></div>
+      </div>
+
+      <!-- SVG com texto circular girando -->
+      <svg class="svg-circle" viewBox="0 0 560 560" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <path id="ringPath" d="M280,50 A230,230 0 1,1 279.9,50" />
+        </defs>
+
+        <g transform="translate(0,0)">
+          <text>
+            <textPath xlink:href="#ringPath" startOffset="10%">
+              Barbearia Estilo & Tradição • Barbearia Estilo & Tradição • Barbearia Estilo & Tradição • Barbearia Estilo
+              & Tradição
+            </textPath>
+          </text>
+        </g>
+      </svg>
+
+      <div class="circulo">
+        <img src="redondo.png" alt="redondo">
+      </div>
+  </section>
+
+</body>
+
+</html>

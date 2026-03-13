@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="java.js" defer></script>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <title>Barbearia Estilo e Tradição</title>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo"> Barbearia Estilo & Tradição</div>
+    <nav>
+      <a href="sobre.html" class="ativo">Sobre</a>
+      <a href="#contato" class="ativo">Contato</a>
+      <a href="login.html" class="ativo">Login</a>
+      <a href="logout.php" class="ativo">Sair</a>
+
+    </nav>
+  </header>
+
+  <section id="inicio" class="hero">
+    <video autoplay muted loop id="bg-video">
+      <source src="barbearia.mp4" type="video/mp4">
+    </video>
+
+    <h1>Bem-vindo à Barbearia Estilo & Tradição</h1>
+    <p>Onde o clássico encontra o moderno</p>
+    <a href="agendamento.php" class="botao">Agendar Agora</a>
+  </section>
+  <main>
+    <div class="background"></div>
+    <section id="quem-somos" class="secao">
+      <section class="quemsomos">
+        <div class="conteudo-quemsomos">
+          <h2>Quem somos</h2>
+          <p>
+            Na Barbearia Estilo & Tradição você encontra cuidado de verdade. Trabalhamos com cortes, barba, coloração,
+            hidratação,
+            tranças, penteados e serviços completos para deixar seu visual no ponto.
+            <br>
+            Nossa equipe entrega técnica, atenção e um atendimento que valoriza seu tempo. Aqui estilo e tradição
+            caminham juntos para você sair confiante e satisfeito.
+          </p>
+          <div class="linha-divisoria"></div>
+        </div>
+      </section>
+
+      <div class="galeria-container">
+        <div class="galeria">
+          <img src="fotoc.jpg" alt="">
+          <img src="fotogaleria1.jpg" alt="">
+          <img src="fotogaleria2.jpg" alt="">
+          <img src="fotogaleria3.jpg" alt="">
+          <img src="fotogaleria4.jpg" alt="">
+          <img src="fotogaleria5.jpg" alt="">
+          <img src="fotogaleria7.jpg" alt="">
+          <img src="fotogaleria8.jpg" alt="">
+
+          <img src="fotoc.jpg" alt="">
+          <img src="fotogaleria1.jpg" alt="">
+          <img src="fotogaleria2.jpg" alt="">
+          <img src="fotogaleria3.jpg" alt="">
+          <img src="fotogaleria4.jpg" alt="">
+          <img src="fotogaleria5.jpg" alt="">
+        </div>
+      </div>
+
+      </section>
+      <section id="servicos">
+        <h2> Serviços Oferecidos</h2>
+        <div class="servicos-container">
+          <div class="servico">
+            <h3>Corte infantil </h3>
+            <p>Estilo e conforto perfeitos para a sua criança.</p>
+            <img src="servico3.jpg" alt="Corte infantil">
+          </div>
+
+          <div class="servico">
+            <h3>Coloração e Barba</h3>
+            <p>Barba alinhada, com toalha quente e produtos de qualidade e coloração em todos os níveis.</p>
+            <img src="servico1.jpg" alt="Barba e Especiais">
+          </div>
+
+          <div class="servico">
+            <h3>Corte e Cuidados Especiais</h3>
+            <p>Cortes, Penteados, Hidratação e Design.</p>
+            <img src="servico2.jpg" alt="Corte">
+          </div>
+        </div>
+      </section>
+      <h2 class ="Titulos-profissionais">Nossos Profissionais em Corte Masculino</h2>
+      <div class="team-container">
+        <div class="card">
+          <img src="barbeiro1.jpg" alt="João Silva">
+          <h3>Carlos</h3>
+          <p>Especialista em: Hidratação e Design</p>
+          <span>Segunda, Quarta, Sexta</span>
+        </div>
+
+        <div class="card">
+          <img src="barbeiro2.jpg" alt="Carlos Santos">
+          <h3>Matheus</h3>
+          <p>Especialista em: Corte, Barba e Penteados</p>
+          <span>Segunda a Sábado</span>
+        </div>
+
+        <div class="card">
+          <img src="barbeiro3.jpg" alt="Felipe Souza">
+          <h3>Guilherme</h3>
+          <p>Especialista em: Sobrancelha e Tranças</p>
+          <span>Segunda a Sexta</span>
+        </div>
+
+        <div class="card">
+          <img src="barbeiro4.jpg" alt="Renato Lima">
+          <h3>Pedro</h3>
+          <p>Especialista em: Coloração e Corte</p>
+          <span>Segunda a Sábado</span>
+        </div>
+
+        <div class="card">
+          <img src="barbeiro5.jpg" alt="Marcos Oliveira">
+          <h3>Mario</h3>
+          <p>Especialista em: Corte infantil</p>
+          <span>Quarta, Sexta e Sábado</span>
+        </div>
+      </div>
+      <div class="linha-final-profissionais"></div>
+
+
+      <section id="avaliacao" class="avaliacao">
+        <h2>Avalie nosso site:</h2>
+
+        <div class="estrelas">
+          <input type="radio" id="estrela5" name="estrela" value="5"><label for="estrela5">★</label>
+          <input type="radio" id="estrela4" name="estrela" value="4"><label for="estrela4">★</label>
+          <input type="radio" id="estrela3" name="estrela" value="3"><label for="estrela3">★</label>
+          <input type="radio" id="estrela2" name="estrela" value="2"><label for="estrela2">★</label>
+          <input type="radio" id="estrela1" name="estrela" value="1"><label for="estrela1">★</label>
+        </div>
+
+        <textarea id="comentario" rows="4" cols="50" placeholder="Escreva aqui sua avaliação..."></textarea>
+
+        <button id="enviar">Enviar Avaliação</button>
+        <p id="mensagem"></p>
+
+        <div id="lista-avaliacoes"></div>
+
+      </section>
+      <section class="horario">
+        <h2>Horário de Funcionamento</h2>
+
+        <p>Segunda a Sábado: 08h às 17h<br>
+          <br>
+          Domingo: Fechado
+        </p>
+      </section>
+
+
+  </main>
+
+
+  <footer>
+    <div class="contato" id="contato">
+      <div class="info">
+        <h2>Contato</h2>
+        <p>📍 Endereço: Av. Pastor Martin Luther King Jr., 126 - Del Castilho, Rio de Janeiro - RJ</p>
+        <p>📞 Telefone: (21) 3835-4290</p>
+        <p>💬 Whatsapp: (21) 99999-9999</p>
+        <p>✉️ Email: barbeariaestiloetradicao@gmail.com</p>
+      </div>
+      <div class="mapa">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3675.9636910634686!2d-43.27406172504666!3d-22.877799636834972!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x997d18e80c4569%3A0xc62bd5a1dabb0de5!2sShopping%20Nova%20Am%C3%A9rica!5e0!3m2!1spt-BR!2sbr!4v1762780720318!5m2!1spt-BR!2sbr"
+          allowfullscreen="" loading="lazy">
+        </iframe>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

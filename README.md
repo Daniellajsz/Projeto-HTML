@@ -1,0 +1,1 @@
+Este projeto foi desenvolvido como parte de um exercício prático para criar um site completo utilizando HTML, CSS, JavaScript, PHP e banco de dados. O objetivo foi aplicar conceitos de desenvolvimento web, integrando estrutura da página, estilização, interatividade e conexão com banco de dados para armazenamento e gerenciamento de informações.
